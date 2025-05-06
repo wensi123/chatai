@@ -117,7 +117,7 @@ def chat_api_streaming():
             try:
                 for new_text in streamer:
                     tokens_yielded += 1
-                    # print(f"generate_sse: Yielding token chunk: '{new_text}'") # !! 关键：确认 streamer 是否有输出
+                    print(f"generate_sse: Yielding token chunk: '{new_text}'") # !! 关键：确认 streamer 是否有输出
                     yield f"data: {new_text}\n\n"
 
                 print(f"generate_sse: Streamer finished. Total token chunks yielded: {tokens_yielded}") # 确认 streamer 循环结束
